@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy 17 Months 💛</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chewy&family=Patrick+Hand&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1d1d1d;
+    --sky: #9ad8f2;
+    --sky2: #d8f1fb;
+    --red: #e63946;
+    --yellow: #ffd93b;
+    --paper: #fffdf6;
+    --pink: #ff8fab;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    font-family: "Patrick Hand", "Comic Sans MS", cursive;
+    color: var(--ink);
+    background: linear-gradient(180deg, var(--sky) 0%, var(--sky2) 70%, #fff 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-size: 20px;
+  }
+  .cloud {
+    position: fixed; z-index: 0; background: #fff; border-radius: 999px; opacity: .85;
+    animation: drift linear infinite;
+  }
+  .cloud::before, .cloud::after { content: ""; position: absolute; background: #fff; border-radius: 50%; }
+  .cloud::before { width: 55%; height: 160%; left: 15%; top: -80%; }
+  .cloud::after  { width: 40%; height: 120%; left: 50%; top: -55%; }
+  @keyframes drift { from { transform: translateX(-30vw); } to { transform: translateX(130vw); } }
+
+  main { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; padding: 24px 16px 60px; }
+  h1 {
+    font-family: "Chewy", cursive; font-weight: 400; text-align: center;
+    font-size: clamp(40px, 11vw, 78px); line-height: 1; margin: 18px 0 6px;
+    color: var(--red); -webkit-text-stroke: 2px var(--ink);
+    text-shadow: 4px 4px 0 var(--ink); letter-spacing: 1px;
+  }
+  .sub { text-align: center; font-size: clamp(20px, 5vw, 26px); margin: 8px 0 22px; }
+  h2 { font-family: "Chewy", cursive; font-weight: 400; font-size: 30px; margin: 0 0 12px; text-align: center; }
+
+  .box {
+    background: var(--paper); border: 4px solid var(--ink); border-radius: 18px;
+    box-shadow: 6px 6px 0 var(--ink); padding: 20px; margin: 28px 0;
+  }
+
+  /* counter */
+  .counter { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; text-align: center; }
+  .counter div { background: var(--yellow); border: 3px solid var(--ink); border-radius: 12px; padding: 8px 4px; }
+  .counter b { display: block; font-family: "Chewy", cursive; font-weight: 400; font-size: clamp(24px, 7vw, 38px); }
+  .counter span { font-size: 16px; }
+
+  /* comic strip */
+  .strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; background: var(--ink); padding: 10px; border-radius: 6px; }
+  @media (max-width: 640px) { .strip { grid-template-columns: repeat(2, 1fr); } }
+  .panel { position: relative; aspect-ratio: 1; background: #fff; overflow: hidden; }
+  .panel svg { width: 100%; height: 100%; display: block; }
+  .bubble {
+    position: absolute; top: 6px; left: 6px; right: 6px; background: #fff; border: 2.5px solid var(--ink);
+    border-radius: 50%; padding: 6px 10px; text-align: center; line-height: 1.1;
+    font-size: clamp(12px, 3vw, 15px);
+  }
+  .bubble::after {
+    content: ""; position: absolute; width: 9px; height: 9px; border: 2.5px solid var(--ink);
+    background: #fff; border-radius: 50%; bottom: -14px; left: 30%;
+  }
+  .strip-title { text-align: center; color: #fff; font-family: "Chewy", cursive; grid-column: 1 / -1; font-size: 22px; letter-spacing: 1px; }
+
+  .dance { transform-box: fill-box; transform-origin: 50% 100%; animation: dance .6s ease-in-out infinite alternate; }
+  @keyframes dance { from { transform: rotate(-8deg) translateY(0); } to { transform: rotate(8deg) translateY(-6px); } }
+  .flap { transform-box: fill-box; transform-origin: 50% 50%; animation: flap .35s ease-in-out infinite alternate; }
+  @keyframes flap { from { transform: translateY(0); } to { transform: translateY(-5px); } }
+  .twinkle { animation: twinkle 1.6s ease-in-out infinite alternate; }
+  @keyframes twinkle { from { opacity: .3; } to { opacity: 1; } }
+
+  /* letter */
+  .letter {
+    background: repeating-linear-gradient(var(--paper) 0 33px, #c9e4f5 33px 35px);
+    line-height: 35px; padding: 30px 22px 22px 46px; position: relative;
+    font-size: 22px;
+  }
+  .letter::before { content: ""; position: absolute; left: 32px; top: 0; bottom: 0; width: 2px; background: #f4a3a8; }
+  .letter p { margin: 0 0 35px; }
+  .letter .sign { text-align: right; margin: 0; }
+
+  /* pet snoopy */
+  .pet { text-align: center; }
+  .pet-stage { position: relative; display: inline-block; margin-top: 70px; }
+  .pet-stage svg { width: min(260px, 70vw); cursor: pointer; display: block; -webkit-tap-highlight-color: transparent; }
+  .pet-stage svg.boing { animation: boing .45s ease; }
+  @keyframes boing { 0%{transform:scale(1)} 30%{transform:scale(1.08,.92)} 60%{transform:scale(.95,1.06) translateY(-14px)} 100%{transform:scale(1)} }
+  .think {
+    position: absolute; bottom: 92%; left: 50%; transform: translateX(-50%);
+    width: min(300px, 82vw); background: #fff; border: 3px solid var(--ink); border-radius: 40px;
+    padding: 12px 16px; font-size: 20px; line-height: 1.2; min-height: 54px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .think::before, .think::after { content: ""; position: absolute; background: #fff; border: 3px solid var(--ink); border-radius: 50%; }
+  .think::before { width: 16px; height: 16px; bottom: -22px; left: 58%; }
+  .think::after  { width: 9px; height: 9px; bottom: -36px; left: 63%; }
+  .hint { font-size: 17px; opacity: .7; margin-top: 4px; }
+
+  /* buttons */
+  .btn {
+    font-family: "Chewy", cursive; font-size: 26px; background: var(--red); color: #fff;
+    border: 4px solid var(--ink); border-radius: 999px; padding: 10px 28px; cursor: pointer;
+    box-shadow: 4px 4px 0 var(--ink); transition: transform .1s, box-shadow .1s;
+  }
+  .btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+  .center { text-align: center; }
+  footer { text-align: center; font-size: 22px; margin-top: 30px; }
+
+  /* floating hearts */
+  .heart { position: fixed; z-index: 50; pointer-events: none; font-size: 26px; animation: floatUp 1.8s ease-out forwards; }
+  @keyframes floatUp { from { opacity: 1; transform: translate(0,0) scale(.6); } to { opacity: 0; transform: translate(var(--dx), -220px) scale(1.3); } }
+
+  /* hug overlay */
+  .hug {
+    position: fixed; inset: 0; z-index: 40; display: none; align-items: center; justify-content: center; flex-direction: column;
+    background: rgba(255, 220, 230, .92);
+  }
+  .hug.show { display: flex; animation: pop .35s ease; }
+  .hug svg { width: min(320px, 75vw); animation: squeeze .5s ease-in-out infinite alternate; }
+  @keyframes squeeze { from { transform: scale(1); } to { transform: scale(1.06, .95); } }
+  .hug .big { font-family: "Chewy", cursive; font-size: clamp(44px, 13vw, 80px); color: var(--red); -webkit-text-stroke: 2px var(--ink); text-shadow: 4px 4px 0 var(--ink); }
+  @keyframes pop { from { opacity: 0; transform: scale(.8); } to { opacity: 1; transform: scale(1); } }
+
+  /* envelope intro */
+  .intro {
+    position: fixed; inset: 0; z-index: 30; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: linear-gradient(180deg, var(--sky), var(--sky2)); transition: opacity .7s ease, visibility .7s;
+    cursor: pointer; padding: 16px;
+  }
+  .intro.gone { opacity: 0; visibility: hidden; }
+  .intro p { font-size: 26px; margin: 22px 0 0; text-align: center; }
+  .env { position: relative; width: min(320px, 86vw); aspect-ratio: 3/2; }
+  .env .back  { position: absolute; inset: 0; background: #f7c4cf; border: 4px solid var(--ink); border-radius: 10px; }
+  .env .card  { position: absolute; left: 8%; right: 8%; top: 10%; bottom: 8%; background: var(--paper); border: 3px solid var(--ink); border-radius: 6px;
+                display: flex; align-items: center; justify-content: center; font-family: "Chewy", cursive; font-size: 26px; color: var(--red);
+                transition: transform .7s ease .35s; }
+  .env .front { position: absolute; inset: 0; background: #ffd6de; border: 4px solid var(--ink); border-radius: 10px;
+                clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%); }
+  .env .flap  { position: absolute; left: 0; right: 0; top: 0; height: 58%; background: #ffb3c1; border: 4px solid var(--ink);
+                clip-path: polygon(0 0, 100% 0, 50% 100%); transform-origin: top; transition: transform .5s ease; z-index: 3; }
+  .env .seal  { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 40px; z-index: 4; transition: opacity .3s; }
+  .intro.open .flap { transform: rotateX(180deg); z-index: 0; }
+  .intro.open .seal { opacity: 0; }
+  .intro.open .card { transform: translateY(-55%); }
+  .wiggle { animation: wig 1.4s ease-in-out infinite; }
+  @keyframes wig { 0%,80%,100% { transform: rotate(0); } 85% { transform: rotate(-4deg); } 90% { transform: rotate(4deg); } 95% { transform: rotate(-2deg); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SVG ART (drawn by hand, Snoopy-inspired) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- beagle, facing right, viewBox 0 0 200 200 -->
+    <symbol id="snoopy" viewBox="0 0 200 200">
+      <g stroke="#1d1d1d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M64 156 q-18 -2 -16 -20" fill="none"/>
+        <ellipse cx="92" cy="148" rx="30" ry="34" fill="#fff"/>
+        <ellipse cx="76" cy="183" rx="17" ry="8" fill="#fff"/>
+        <ellipse cx="112" cy="183" rx="17" ry="8" fill="#fff"/>
+        <path d="M100 138 q20 2 28 -10" fill="none"/>
+      </g>
+      <!-- head: outline layer then fill layer = one smooth shape -->
+      <g fill="#1d1d1d" stroke="#1d1d1d" stroke-width="10">
+        <ellipse cx="88" cy="78" rx="44" ry="40"/>
+        <ellipse cx="138" cy="84" rx="36" ry="22"/>
+      </g>
+      <g fill="#fff">
+        <ellipse cx="88" cy="78" rx="44" ry="40"/>
+        <ellipse cx="138" cy="84" rx="36" ry="22"/>
+      </g>
+      <path d="M64 44 C36 54 34 108 52 124 C72 122 80 84 74 46 Z" fill="#1d1d1d"/>
+      <ellipse cx="170" cy="77" rx="10" ry="8" fill="#1d1d1d"/>
+      <ellipse cx="116" cy="64" rx="3.8" ry="6.5" fill="#1d1d1d"/>
+      <ellipse cx="132" cy="94" rx="8" ry="4.5" fill="#ffb3c1" opacity=".8"/>
+      <path d="M128 101 q18 10 34 -4" fill="none" stroke="#1d1d1d" stroke-width="4" stroke-linecap="round"/>
+      <path d="M66 116 q26 14 52 0" fill="none" stroke="#e63946" stroke-width="8" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- little yellow bird, facing right, viewBox 0 0 60 60 -->
+    <symbol id="bird" viewBox="0 0 60 60">
+      <g fill="#1d1d1d" stroke="#1d1d1d" stroke-width="5">
+        <ellipse cx="28" cy="38" rx="14" ry="12"/><circle cx="32" cy="24" r="11"/>
+      </g>
+      <g fill="#ffd93b"><ellipse cx="28" cy="38" rx="14" ry="12"/><circle cx="32" cy="24" r="11"/></g>
+      <g fill="none" stroke="#1d1d1d" stroke-width="2.2" stroke-linecap="round">
+        <path d="M30 13 q-5 -8 1 -10"/><path d="M33 13 q2 -9 7 -8"/><path d="M27 14 q-7 -5 -5 -9"/>
+        <path d="M36 20 v5"/>
+        <path d="M22 37 q-9 -7 -12 2 q6 3 12 -2"/>
+        <path d="M24 50 v6 M32 50 v6"/>
+      </g>
+      <path d="M42 23 l8 2.5 l-8 2.5 z" fill="#f5a623" stroke="#1d1d1d" stroke-width="1.5"/>
+    </symbol>
+
+    <!-- red doghouse, viewBox 0 0 200 200 -->
+    <symbol id="house" viewBox="0 0 200 200">
+      <g stroke="#1d1d1d" stroke-width="5" stroke-linejoin="round">
+        <rect x="42" y="92" width="116" height="100" fill="#e63946"/>
+        <path d="M28 98 L100 32 L172 98 Z" fill="#c1121f"/>
+        <path d="M78 192 V150 a22 22 0 0 1 44 0 V192 Z" fill="#1d1d1d"/>
+      </g>
+    </symbol>
+
+    <symbol id="env" viewBox="0 0 40 28">
+      <rect x="1.5" y="1.5" width="37" height="25" rx="2" fill="#fff" stroke="#1d1d1d" stroke-width="2.5"/>
+      <path d="M2 3 L20 15 L38 3" fill="none" stroke="#1d1d1d" stroke-width="2.5"/>
+      <path d="M20 22 c-4 -3 -6 -5 -4 -7 c1.5 -1.5 3 -0.5 4 1 c1 -1.5 2.5 -2.5 4 -1 c2 2 0 4 -4 7z" fill="#e63946"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ ENVELOPE INTRO ============ -->
+<div class="intro" id="intro" role="button" tabindex="0" aria-label="Open your card">
+  <div class="env wiggle">
+    <div class="back"></div>
+    <div class="card" id="envCard">For you 💛</div>
+    <div class="front"></div>
+    <div class="flap"></div>
+    <div class="seal">❤️</div>
+  </div>
+  <p id="introText">A letter for you… tap to open 💌</p>
+</div>
+
+<!-- ============ HUG OVERLAY ============ -->
+<div class="hug" id="hug">
+  <div class="big">HUG!!</div>
+  <svg viewBox="0 0 200 200"><use href="#snoopy"/></svg>
+  <div style="font-size:24px;margin-top:8px" id="hugText"></div>
+</div>
+
+<main>
+  <h1>Happy 17 Months!</h1>
+  <p class="sub" id="sub"></p>
+
+  <section class="box">
+    <h2>We've been together for…</h2>
+    <div class="counter" id="counter">
+      <div><b id="cDays">0</b><span>days</span></div>
+      <div><b id="cHours">0</b><span>hours</span></div>
+      <div><b id="cMins">0</b><span>minutes</span></div>
+      <div><b id="cSecs">0</b><span>seconds</span></div>
+    </div>
+    <p class="center" style="margin:12px 0 0;font-size:18px">…and counting 🐾</p>
+  </section>
+
+  <!-- comic strip -->
+  <section class="strip" aria-label="A little comic strip">
+    <div class="strip-title">A LITTLE COMIC FOR YOU</div>
+
+    <div class="panel">
+      <svg viewBox="0 0 200 200">
+        <rect width="200" height="200" fill="#1e3a5f"/>
+        <circle cx="160" cy="30" r="14" fill="#fff6c9"/><circle cx="166" cy="25" r="12" fill="#1e3a5f"/>
+        <g fill="#fff6c9" class="twinkle"><circle cx="30" cy="80" r="2"/><circle cx="120" cy="70" r="2.5"/><circle cx="185" cy="90" r="2"/><circle cx="70" cy="95" r="1.5"/></g>
+        <rect y="185" width="200" height="15" fill="#3a7d44"/>
+        <use href="#house" x="85" y="68" width="125" height="125"/>
+        <use href="#snoopy" x="-2" y="88" width="110" height="110"/>
+      </svg>
+      <div class="bubble" data-panel="0"></div>
+    </div>
+
+    <div class="panel">
+      <svg viewBox="0 0 200 200">
+        <rect width="200" height="200" fill="#bfe7f7"/>
+        <rect y="185" width="200" height="15" fill="#6abf69"/>
+        <use href="#snoopy" x="-2" y="88" width="110" height="110"/>
+        <g class="flap">
+          <g transform="translate(178 70) scale(-1 1)"><use href="#bird" width="52" height="52"/></g>
+          <use href="#env" x="114" y="96" width="30" height="21"/>
+        </g>
+        <text x="64" y="94" font-family="Chewy" font-size="28" fill="#e63946" stroke="#1d1d1d" stroke-width="1">!</text>
+      </svg>
+      <div class="bubble" data-panel="1"></div>
+    </div>
+
+    <div class="panel">
+      <svg viewBox="0 0 200 200">
+        <rect width="200" height="200" fill="#fff4d6"/>
+        <rect y="185" width="200" height="15" fill="#6abf69"/>
+        <use href="#snoopy" x="20" y="76" width="122" height="122"/>
+        <use href="#env" x="108" y="138" width="42" height="30" transform="rotate(-12 129 153)"/>
+        <use href="#bird" x="150" y="140" width="44" height="44"/>
+      </svg>
+      <div class="bubble" data-panel="2"></div>
+    </div>
+
+    <div class="panel">
+      <svg viewBox="0 0 200 200">
+        <rect width="200" height="200" fill="#ffd6de"/>
+        <rect y="185" width="200" height="15" fill="#6abf69"/>
+        <g class="dance"><use href="#snoopy" x="30" y="72" width="126" height="126"/></g>
+        <g class="dance" style="animation-delay:.3s"><use href="#bird" x="148" y="140" width="44" height="44"/></g>
+        <g font-size="18" class="twinkle"><text x="14" y="120">💛</text><text x="160" y="110">💛</text><text x="20" y="170">💛</text></g>
+      </svg>
+      <div class="bubble" data-panel="3"></div>
+    </div>
+  </section>
+
+  <!-- letter -->
+  <section class="box letter" id="letter"></section>
+
+  <!-- pet snoopy -->
+  <section class="box pet">
+    <h2>Why I love you</h2>
+    <div class="pet-stage">
+      <div class="think" id="think">Tap me for a reason 🐾</div>
+      <svg viewBox="0 0 200 200" id="petSnoopy" role="button" aria-label="Tap for a reason"><use href="#snoopy"/></svg>
+    </div>
+    <div class="hint" id="hint">reason 0 of 0</div>
+  </section>
+
+  <!-- hug -->
+  <section class="box center">
+    <h2>Missing you from here</h2>
+    <p style="margin:0 0 16px">Since I can't be there right now, tap this whenever you need one.</p>
+    <button class="btn" id="hugBtn">Get a hug 🤗</button>
+    <p id="hugCount" style="margin:14px 0 0;font-size:18px"></p>
+  </section>
+
+  <footer id="footer"></footer>
+</main>
+
+<script>
+/* ===================== EDIT EVERYTHING HERE ===================== */
+const CONFIG = {
+  herName:  "My Love",          // her name or nickname
+  fromName: "Me",               // how you sign it
+  startDate: "2025-06-13T00:00:00", // the day you got together (YYYY-MM-DD)
+
+  comic: [                      // 4 panels, left to right
+    "17 months with you…",
+    "Special delivery!!",
+    "Even from far away, you're still my favorite person.",
+    "Can't wait to see you again!!",
+  ],
+
+  letter: [
+    "Happy 17 months! I wish I could say this in person, so here's a little card until I can.",
+    "Being apart is hard, but you make everything feel lighter, even from far away. Thank you for your patience and your laugh, and for being you.",
+    "I'm counting down the days until I see you again. Until then, here's a Snoopy, a bird and every hug I've got.",
+  ],
+
+  reasons: [
+    "You make ordinary days feel like Saturday mornings.",
+    "Your laugh. That's it. That's the reason.",
+    "Every call with you is the best part of my day.",
+    "You make the distance feel smaller.",
+    "You're my favorite person to do absolutely nothing with.",
+    "You're adorable when you're sleepy.",
+    "You believe in me even when I don't.",
+    "17 months in and I still get butterflies.",
+  ],
+};
+/* ================================================================ */
+
+const $ = (id) => document.getElementById(id);
+
+// text fill-in
+$("envCard").textContent = "For " + CONFIG.herName + " 💛";
+$("sub").textContent = "To " + CONFIG.herName + ", from your favorite beagle fan 🐶";
+document.querySelectorAll(".bubble").forEach((b) => (b.textContent = CONFIG.comic[+b.dataset.panel] || ""));
+$("letter").innerHTML = "";
+const greet = document.createElement("p"); greet.textContent = "Dear " + CONFIG.herName + ",";
+$("letter").appendChild(greet);
+CONFIG.letter.forEach((t) => { const p = document.createElement("p"); p.textContent = t; $("letter").appendChild(p); });
+const sign = document.createElement("p"); sign.className = "sign"; sign.textContent = "Love always, " + CONFIG.fromName + " ❤️";
+$("letter").appendChild(sign);
+$("footer").textContent = "made with love (and a lot of Snoopy) for " + CONFIG.herName;
+
+// counter
+const start = new Date(CONFIG.startDate);
+function tick() {
+  let s = Math.max(0, Math.floor((Date.now() - start) / 1000));
+  $("cDays").textContent = Math.floor(s / 86400).toLocaleString();
+  $("cHours").textContent = Math.floor((s % 86400) / 3600);
+  $("cMins").textContent = Math.floor((s % 3600) / 60);
+  $("cSecs").textContent = s % 60;
+}
+if (isNaN(start)) $("counter").parentElement.style.display = "none"; else { tick(); setInterval(tick, 1000); }
+
+// hearts
+const HEARTS = ["❤️", "💛", "💕", "💖", "🩷"];
+function burst(x, y, n = 10) {
+  for (let i = 0; i < n; i++) {
+    const h = document.createElement("span");
+    h.className = "heart";
+    h.textContent = HEARTS[Math.floor(Math.random() * HEARTS.length)];
+    h.style.left = x - 13 + "px"; h.style.top = y - 13 + "px";
+    h.style.setProperty("--dx", (Math.random() * 160 - 80) + "px");
+    h.style.animationDelay = Math.random() * 0.25 + "s";
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 2300);
+  }
+}
+
+// envelope intro
+const intro = $("intro");
+function openIntro() {
+  if (intro.classList.contains("open")) return;
+  intro.classList.add("open");
+  intro.querySelector(".env").classList.remove("wiggle");
+  $("introText").textContent = "💛💛💛";
+  setTimeout(() => { burst(innerWidth / 2, innerHeight / 2, 24); intro.classList.add("gone"); }, 1300);
+}
+intro.addEventListener("click", openIntro);
+intro.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") openIntro(); });
+
+// pet snoopy -> reasons
+let r = 0;
+const pet = $("petSnoopy");
+$("hint").textContent = "tap Snoopy (" + CONFIG.reasons.length + " reasons inside)";
+pet.addEventListener("click", (e) => {
+  $("think").textContent = CONFIG.reasons[r % CONFIG.reasons.length];
+  r++;
+  $("hint").textContent = "reason " + (((r - 1) % CONFIG.reasons.length) + 1) + " of " + CONFIG.reasons.length + " (keep tapping)";
+  pet.classList.remove("boing"); void pet.offsetWidth; pet.classList.add("boing");
+  burst(e.clientX, e.clientY, 6);
+});
+
+// hugs
+let hugs = 0;
+try { hugs = +localStorage.getItem("snoopyHugs") || 0; } catch (_) {}
+const hugMsgs = ["Squeeze!", "One more for good measure", "Sent with extra love", "This one's a long one", "Beagle-approved hug"];
+function showCount() { $("hugCount").textContent = hugs ? "Hugs received: " + hugs + " 🐾" : ""; }
+showCount();
+$("hugBtn").addEventListener("click", () => {
+  hugs++;
+  try { localStorage.setItem("snoopyHugs", hugs); } catch (_) {}
+  showCount();
+  $("hugText").textContent = hugMsgs[(hugs - 1) % hugMsgs.length];
+  $("hug").classList.add("show");
+  burst(innerWidth / 2, innerHeight / 2, 18);
+  setTimeout(() => $("hug").classList.remove("show"), 2200);
+});
+$("hug").addEventListener("click", () => $("hug").classList.remove("show"));
+
+// drifting clouds
+for (let i = 0; i < 5; i++) {
+  const c = document.createElement("div");
+  c.className = "cloud";
+  const w = 90 + Math.random() * 90;
+  c.style.width = w + "px"; c.style.height = w * 0.32 + "px";
+  c.style.top = 5 + Math.random() * 80 + "vh";
+  c.style.animationDuration = 40 + Math.random() * 40 + "s";
+  c.style.animationDelay = -Math.random() * 60 + "s";
+  document.body.appendChild(c);
+}
+</script>
+</body>
+</html>
