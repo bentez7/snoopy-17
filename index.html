@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Happy 17 Months 💛</title>
+<title>Happy 17 Months 🤍</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Patrick+Hand&display=swap" rel="stylesheet">
@@ -239,10 +239,10 @@
   <img class="bird" src="img/woodstock-letter.png" alt="">
   <div class="env wiggle">
     <div class="back"></div>
-    <div class="card" id="envCard">For you 💛</div>
+    <div class="card" id="envCard">For you 🤍</div>
     <div class="front"></div>
     <div class="flap"></div>
-    <div class="seal">❤️</div>
+    <div class="seal">🤍</div>
   </div>
   <p id="introText">A letter for you… tap to open 💌</p>
 </div>
@@ -342,8 +342,8 @@ const CONFIG = {
     "i love u my baby, and i'll keep loving u more and more. i hope we're building our house tgt piece by piece. thank u for always being by my side when i'm at my lowest and when i'm irrational. pls pray that god guides us through this journey, through all the tough, happy and sad moments. i hope both of us can win and keep the drive to move forward in life.",
     "work hard my baby, graduate soon and build the life we want.",
   ],
-  signoff: "love u always,\nfrom b ❤️",
-  ps: "ps. i've prepared a gift for huihui, it will arrive anytime soon today or tmr, and a small one for u when ur back 🎁",
+  signoff: "love u always,\nfrom b 🤍",
+  ps: "ps. i've prepared a gift for huihui, it will arrive anytime soon today or tmr, and a small one for u when ur back",
 
   reasons: [
     "You make ordinary days feel like Saturday mornings.",
@@ -361,11 +361,11 @@ const CONFIG = {
 const $ = (id) => document.getElementById(id);
 
 // text fill-in
-$("envCard").textContent = "For " + CONFIG.herName + " 💛";
-$("sub").textContent = "To " + CONFIG.herName + ", from your favorite beagle fan 🐶";
+$("envCard").textContent = "For " + CONFIG.herName + " 🤍";
+$("sub").textContent = "To " + CONFIG.herName + ", from your favorite snoopy 🐶";
 document.querySelectorAll(".bubble").forEach((b) => (b.textContent = CONFIG.comic[+b.dataset.panel] || ""));
 $("letter").innerHTML = '<img class="typer" src="img/typing.png" alt="Snoopy typing this letter">';
-const greet = document.createElement("p"); greet.textContent = "Dear " + CONFIG.herName + ",";
+const greet = document.createElement("p"); greet.textContent = "dear " + CONFIG.herName + ",";
 $("letter").appendChild(greet);
 CONFIG.letter.forEach((t) => { const p = document.createElement("p"); p.textContent = t; $("letter").appendChild(p); });
 const sign = document.createElement("p"); sign.className = "sign"; sign.style.whiteSpace = "pre-line"; sign.textContent = CONFIG.signoff;
@@ -385,7 +385,7 @@ function tick() {
 if (isNaN(start)) $("counter").parentElement.style.display = "none"; else { tick(); setInterval(tick, 1000); }
 
 // hearts
-const HEARTS = ["❤️", "💛", "💕", "💖", "🩷"];
+const HEARTS = ["🤍", "🤍", "💕", "💖", "🩷"];
 function burst(x, y, n = 10) {
   for (let i = 0; i < n; i++) {
     const h = document.createElement("span");
@@ -405,7 +405,7 @@ function openIntro() {
   if (intro.classList.contains("open")) return;
   intro.classList.add("open");
   intro.querySelector(".env").classList.remove("wiggle");
-  $("introText").textContent = "💛💛💛";
+  $("introText").textContent = "🤍🤍🤍";
   setTimeout(() => { burst(innerWidth / 2, innerHeight / 2, 24); intro.classList.add("gone"); }, 1300);
 }
 intro.addEventListener("click", openIntro);
