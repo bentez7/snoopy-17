@@ -362,7 +362,7 @@ const $ = (id) => document.getElementById(id);
 
 // text fill-in
 $("envCard").textContent = "For " + CONFIG.herName + " 🤍";
-$("sub").textContent = "To " + CONFIG.herName + ", from your favorite snoopy 🐶";
+$("sub").textContent = "To " + CONFIG.herName + ", from your favorite snoopy";
 document.querySelectorAll(".bubble").forEach((b) => (b.textContent = CONFIG.comic[+b.dataset.panel] || ""));
 $("letter").innerHTML = '<img class="typer" src="img/typing.png" alt="Snoopy typing this letter">';
 const greet = document.createElement("p"); greet.textContent = "dear " + CONFIG.herName + ",";
