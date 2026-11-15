@@ -335,10 +335,15 @@ const CONFIG = {
   ],
 
   letter: [
-    "Happy 17 months! I wish I could say this in person, so here's a little card until I can.",
-    "Being apart is hard, but you make everything feel lighter, even from far away. Thank you for your patience and your laugh, and for being you.",
-    "I'm counting down the days until I see you again. Until then, here's a Snoopy, a bird and every hug I've got.",
+    "hi my baby",
+    "happy 17th month anniversary!!",
+    "it's been almost a month without u and it feels so empty, like we're back in our ldr days. after graduating i've honestly been quite lost about my career. i'm scared i won't be able to earn and save enough to support the life u want in the future. but being with u, watching my wallet go in and out, actually gives me the drive to grow my money more, even if it means putting myself aside.",
+    "i know sometimes i can't give u surprises cuz i'm busy or tight on money. i know i'm not a good planner and i will be better. i've been getting more short-tempered lately. i know i need to work on myself and i believe i can. i've let go of all my grudges. u never know which loved one u won't get to see tmr right, love is not complicated.",
+    "i love u my baby, and i'll keep loving u more and more. i hope we're building our house tgt piece by piece. thank u for always being by my side when i'm at my lowest and when i'm irrational. pls pray that god guides us through this journey, through all the tough, happy and sad moments. i hope both of us can win and keep the drive to move forward in life.",
+    "work hard my baby, graduate soon and build the life we want.",
   ],
+  signoff: "love u always,\nfrom b ❤️",
+  ps: "ps. i've prepared a gift for huihui, it will arrive anytime soon today or tmr, and a small one for u when ur back 🎁",
 
   reasons: [
     "You make ordinary days feel like Saturday mornings.",
@@ -363,8 +368,9 @@ $("letter").innerHTML = '<img class="typer" src="img/typing.png" alt="Snoopy typ
 const greet = document.createElement("p"); greet.textContent = "Dear " + CONFIG.herName + ",";
 $("letter").appendChild(greet);
 CONFIG.letter.forEach((t) => { const p = document.createElement("p"); p.textContent = t; $("letter").appendChild(p); });
-const sign = document.createElement("p"); sign.className = "sign"; sign.textContent = "Love always, " + CONFIG.fromName + " ❤️";
+const sign = document.createElement("p"); sign.className = "sign"; sign.style.whiteSpace = "pre-line"; sign.textContent = CONFIG.signoff;
 $("letter").appendChild(sign);
+if (CONFIG.ps) { const ps = document.createElement("p"); ps.textContent = CONFIG.ps; ps.style.margin = "35px 0 0"; $("letter").appendChild(ps); }
 $("footer").textContent = "made with love (and a lot of Snoopy) for " + CONFIG.herName;
 
 // counter
